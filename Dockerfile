@@ -19,7 +19,7 @@ Run 7z e Cerebellum3Merge.bin.7z
 RUN rm Cerebellum3Merge.bin.7z
 RUN wget --no-check-certificate "https://abrok.eu/stockfish/builds/723f48dec0eb05204b51cace54b033a5a85a66b9/linux64modern/stockfish_21091517_x64_modern.zip" -O stockfishmodern.zip
 #RUN wget --no-check-certificate "https://data.stockfishchess.org/nn/nn-938525872610.nnue" -O nn-938525872610.nnue
-RUN 7z e stockfishmodern.zip && rm chess-engine.zip && mv stockfish* chess-engine
+RUN 7z e stockfishmodern.zip && rm stockfishmodern.zip && mv stockfish* stockfishmodern
 
 COPY requirements.txt .
 RUN python3 -m pip install --no-cache-dir -r requirements.txt
